@@ -1,1 +1,89 @@
-!!!before checking this out make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED means that its receiving the data perfectly. Generally it takes few minutes to blink the LED after giving power to the module. So wait until that. And if its not blinking even after 5 minutes then go to a window side area or any place under the open sky. In the image below you can see how the blue LED should blink.
+
+!!!before checking this out make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED
+means that its receiving the data perfectly. Generally it takes few minutes to blink the LED after giving power to the
+module. So wait until that. And if its not blinking even after 5 minutes then go to a window side area or any place
+under the open sky. In the image below you can see how the blue LED should blink.
+
+VIDEO
+
+When the blue led is blinking, run the following command:
+
+`
+sudo cat /dev/ttyAMA0
+`
+
+Now you will see a lots of data like shown in the below image. 
+
+PICTURE
+
+That basically means that its working. To stop this type Ctrl + c .
+
+# Setup for writing the Python Code:
+
+Now before we write the python code to get the GPS data we need set up few things again. By default the Raspberry Pi uses serial port for this “console” login so if we want to use the serial port to get data from the GPS module we need to disable the console login. Now there are two serial ports in Raspberry pi 3: serial0 and serial1. But inbetween them serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. Now to see which port is connected with serial0 use the follwoing command:
+
+`
+ls -l /dev
+`
+
+There are two possible outputs:
+
+If your output looks like this:
+
+PICTURE
+
+As you can see serial0 is linked with ttyAMA0. So to disable the console you need to use the follwing commands:
+
+``
+sudo systemctl stop serial-getty@ttyAMA0.service
+sudo systemctl disable serial-getty@ttyAMA0.service
+``
+
+But if your output looks like this:
+
+PICTURE
+
+That means serial0 is linked with ttyS0. So to disable the console you need to use the follwing commands:
+
+``
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+``
+
+## Lets write the Python Code:
+
+Now we need to install a python library so we have access to the right commands:
+
+``
+pip install pynmea2
+``
+
+Now finally we are ready to write the code.
+
+INFO RE FOLDER ETC NEEDED HERE
+
+
+import serial
+import time
+import string
+import pynmea2
+
+while True:
+	port="/dev/ttyAMA0"
+	ser=serial.Serial(port, baudrate=9600, timeout=0.5)
+	dataout = pynmea2.NMEAStreamReader()
+	newdata=ser.readline()
+
+	if newdata[0:6] == "$GPRMC":
+		newmsg=pynmea2.parse(newdata)
+		lat=newmsg.latitude
+		lng=newmsg.longitude
+		gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
+		print(gps)
+If you run this python code you will see a output like this:
+
+
+
+I am not moving this device thats why it’s giving me the same GPS location. But as you can see it’s working properly.
+
+So at the end of this article we have a device which can give us realtime gps data. In the next blog we will see how to use this device to make a live GPS tracker, means from anywhere in the world we will be able to track this device.
