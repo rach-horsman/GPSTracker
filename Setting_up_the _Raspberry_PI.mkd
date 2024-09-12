@@ -1,0 +1,5 @@
+Install the lastest Rasbian OS in a memory card. For details visit www.raspberrypi.org/documentation/installation/installing-images/.
+
+Make sure you edit the ...... to match the wifi network you'll be working from and note down the username and password for the device.
+
+Insert the memory card into raspberry pi and power it up. 
