@@ -1,14 +1,25 @@
-edit the /boot/config.txt file
+## Getting the GPS data
+
+Install the lastest Rasbian OS in a memory card. For details visit www.raspberrypi.org/documentation/installation/installing-images/.
+
+Make sure you edit the ...... to match the wifi network you'll be working from and note down the username and password for the device.
+
+Insert the memory card into raspberry pi and power it up. 
+
+Now here we need to modify few things. At first we need to edit the /boot/config.txt file. 
+
 Now you need to open this file in any text editor. Here I am using nano:
 sudo nano /boot/config.txt
 
 At the end of the file add the follwing lines:
 
+`````
 dtparam=spi=on
 dtoverlay=pi3-disable-bt
 core_freq=250
 enable_uart=1
 force_turbo=1
+`````
 
 It will look something like this:
 
@@ -17,18 +28,25 @@ PICTURE TO ADD
 Now save this by typing ctrl +x, then type y and press enter.
 
 
-Raspbian uses the UART as a serial console and so we need to turn off that functionality. To do so we need to change the /boot/cmdline.txt file. For safety before editing the file make a backup of that using the following command:
+Raspbian uses the UART as a serial console and so we need to turn off that functionality. To do so we need to change the /boot/cmdline.txt file. 
 
+For safety before editing the file make a backup of that using the following command:
+
+`
 sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt
+`
 
 Replace the content with the follwing line (delete everything in it and write down the following content):
 
+`
 dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
-
+`
 Now save this by typing ctrl +x, then type y and press enter.
 
 Now reboot pi using:
 
+`
 sudo reboot
+`
 
 After the reboot now its time to check how our GPS module is working.
