@@ -1,15 +1,15 @@
-## Getting the GPS data
+# Getting the GPS data
+ 
+We need to modify few things so that the RaspberryPi works with the GPS module, can show information on your laptop screen and later send it to a realtime database.
 
-Install the lastest Rasbian OS in a memory card. For details visit www.raspberrypi.org/documentation/installation/installing-images/.
-
-Make sure you edit the ...... to match the wifi network you'll be working from and note down the username and password for the device.
-
-Insert the memory card into raspberry pi and power it up. 
-
-Now here we need to modify few things. At first we need to edit the /boot/config.txt file. 
+## STEP 1
+First we need to edit the /boot/firmware/config.txt file. 
 
 Now you need to open this file in any text editor. Here I am using nano:
-sudo nano /boot/config.txt
+
+`
+sudo nano /boot/firmware/config.txt
+`
 
 At the end of the file add the follwing lines:
 
@@ -27,22 +27,31 @@ PICTURE TO ADD
 
 Now save this by typing ctrl +x, then type y and press enter.
 
-
-Raspbian uses the UART as a serial console and so we need to turn off that functionality. To do so we need to change the /boot/cmdline.txt file. 
+## STEP 2
+Raspbian uses the UART as a serial console and so we need to turn off that functionality. To do so we need to change the /boot/firmware/cmdline.txt file. 
 
 For safety before editing the file make a backup of that using the following command:
 
+
 `
-sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt
+sudo cp /boot/firmware/cmdline.txt /boot/firmware/cmdline_backup.txt
 `
 
-Replace the content with the follwing line (delete everything in it and write down the following content):
+Then open the original file
+
+`
+sudo nano /boot/firmware/cmdline.txt
+`
+
+Replace the entire content with the follwing line (delete everything in it and write down the following content):
 
 `
 dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
 `
+
 Now save this by typing ctrl +x, then type y and press enter.
 
+## STEP 3
 Now reboot pi using:
 
 `
