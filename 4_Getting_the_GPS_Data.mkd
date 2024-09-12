@@ -34,10 +34,10 @@ PICTURE
 
 As you can see serial0 is linked with ttyAMA0. So to disable the console you need to use the follwing commands:
 
-``
+```
 sudo systemctl stop serial-getty@ttyAMA0.service
 sudo systemctl disable serial-getty@ttyAMA0.service
-``
+```
 
 But if your output looks like this:
 
@@ -45,10 +45,10 @@ PICTURE
 
 That means serial0 is linked with ttyS0. So to disable the console you need to use the follwing commands:
 
-``
+```
 sudo systemctl stop serial-getty@ttyS0.service
 sudo systemctl disable serial-getty@ttyS0.service
-``
+```
 
 ## Lets write the Python Code:
 
@@ -64,16 +64,17 @@ python -m venv my-venv
 
 Now we need to install a python library so we have access to the right commands:
 
-``
+```
 my-venv/bin/pip install pynmea2
 my-venv/bin/pip install pyserial
-``
+```
 
 Now finally we are ready to write the code.
 
 INFO RE FOLDER ETC NEEDED HERE
 
 
+```
 import serial
 import time
 import string
@@ -92,6 +93,8 @@ while True:
 		gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
 		print(gps)
 
+```
+
 To run this python code you'll use the command
 
 `
@@ -103,5 +106,4 @@ and you will see a output like this:
 
 PICTURE
 
-I am not moving this device thats why it’s giving me the same GPS location. But as you can see it’s working properly.
 
