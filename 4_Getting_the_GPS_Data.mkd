@@ -52,10 +52,21 @@ sudo systemctl disable serial-getty@ttyS0.service
 
 ## Lets write the Python Code:
 
+To prepare for the coding we need to create an virtual environment on the RaspberryPi, this is simply good coding practice and allows us to ensure we can install the relevant librabries needed. 
+
+cd Desktop
+mkdir GPS_Tracker
+cd GPS_Tracker
+
+`
+python -m venv my-venv
+`
+
 Now we need to install a python library so we have access to the right commands:
 
 ``
-pip install pynmea2
+my-venv/bin/pip install pynmea2
+my-venv/bin/pip install pyserial
 ``
 
 Now finally we are ready to write the code.
@@ -80,10 +91,17 @@ while True:
 		lng=newmsg.longitude
 		gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
 		print(gps)
-If you run this python code you will see a output like this:
+
+To run this python code you'll use the command
+
+`
+my-venv/bin/python3 gps_print.py
+`
 
 
+and you will see a output like this:
+
+PICTURE
 
 I am not moving this device thats why it’s giving me the same GPS location. But as you can see it’s working properly.
 
-So at the end of this article we have a device which can give us realtime gps data. In the next blog we will see how to use this device to make a live GPS tracker, means from anywhere in the world we will be able to track this device.
