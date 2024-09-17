@@ -14,7 +14,6 @@ firebaseConfig={"apiKey": "xxxx",
 
     "appId": "xxxx",
 
-    "measurementId": "xxxx",
     "databaseURL": "xxxx"
     }
 
