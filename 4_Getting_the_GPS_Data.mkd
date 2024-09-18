@@ -65,6 +65,7 @@ Now we need to install a python library so we have access to the right commands:
 ```
 my-venv/bin/pip install pynmea2
 my-venv/bin/pip install pyserial
+my-venv/bin/pip install pyrebase
 ```
 
 Now finally we are ready to write the code.
