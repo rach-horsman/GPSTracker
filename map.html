@@ -1,72 +1,90 @@
+<!-- HTML code -->
 <!doctype html>
 <html>
-  <head>
-    <title>Realtime GPS Tracker</title>
-    <link rel="stylesheet" href="map.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </head>
-  <body>
-      <div class="bg"></div>
-     <div class="bg-others"> 
+
+<head>
+  <title>Realtime GPS Tracker Pilot</title>
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="bg-others">
     <div class="container">
-      <h1 >Realtime GPS Tracker with Raspberry PI</h1>
-        <center><hr style="height:2px; border:none; color:#ffffff; background-color:#ffffff; width:35%; margin: 0 auto 0 auto;"></center>
-        <p>by SPARKLERS: We Are The Makers</p>  
-        <center><div id="map-canvas"></div></center>
+      <h1>Realtime GPS Tracker with Raspberry PI Pilot</h1>
+      <center>
+        <hr style="height:2px; border:none; color:#ffffff; background-color:#ffffff; width:35%; margin: 0 auto 0 auto;">
+      </center>
+      <p>by Arm Education with thanks to SPARKLERS: We Are The Makers</p>
+      <center>
+        <div id="map-canvas"></div>
+      </center>
     </div>
-          </div>
+  </div>
 
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
-    <script>
-    window.lat = 37.7850;
-    window.lng = -122.4383;
+  <script>
+    //starting position can be anywhere you want!
+    window.lat = 51.2635;
+    window.lng = -0.23809;
 
+    //declaring variables
     var map;
     var mark;
     var lineCoords = [];
-      
-    var initialize = function() {
-      map  = new google.maps.Map(document.getElementById('map-canvas'), {center:{lat:lat,lng:lng},zoom:12});
-      mark = new google.maps.Marker({position:{lat:lat, lng:lng}, map:map});
-    };
 
-        const firebaseConfig = {
-
-    apiKey: "xxxx",
-
-    authDomain: "xxxx",
-
-    projectId: "xxxx",
-
-    storageBucket: "xxxx",
-
-    messagingSenderId: "xxxx",
-
-    appId: "xxxx",
-
-    measurementId: "xxxx"
-
+    //Draw first map
+    var initialize = function () {
+      map = new google.maps.Map(document.getElementById('map-canvas'), { center: { lat: lat, lng: lng }, zoom: 12 });
+      mark = new google.maps.Marker({ position: { lat: lat, lng: lng }, map: map });
     };
 
     window.initialize = initialize;
 
-    firebase.initializeApp(firebaseConfig );
 
-    var ref = firebase.database().ref();
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-    ref.on("value", function(snapshot) {
-        var gps = snapshot.val();
+
+    // Firebase project configuration information
+
+    const firebaseConfig = {
+      apiKey: "ADD_INFO",
+      authDomain: "ADD_INFO",
+      databaseURL: "ADD_INFO",
+      projectId: "ADD_INFO",
+      storageBucket: "ADD_INFO",
+      messagingSenderId: "ADD_INFO",
+      appId: "ADD_INFO"
+    };
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase();
+
+    // Reference to the  database
+    const dbRef = ref(database);
+
+    // Listen for changes to the "text" node
+    onValue(dbRef, (snapshot) => {
+      var gps = snapshot.val();
       console.log(gps.LAT);
       console.log(gps.LNG);
       lat = gps.LAT;
       lng = gps.LNG;
 
-      map.setCenter({lat:lat, lng:lng, alt:0});
-      mark.setPosition({lat:lat, lng:lng, alt:0});
-      
+      map.setCenter({ lat: lat, lng: lng, alt: 0 });
+      mark.setPosition({ lat: lat, lng: lng, alt: 0 });
+
+      //draw a line from old to new position
       lineCoords.push(new google.maps.LatLng(lat, lng));
 
       var lineCoordinatesPath = new google.maps.Polyline({
@@ -74,14 +92,19 @@
         geodesic: true,
         strokeColor: '#2E10FF'
       });
-      
+
       lineCoordinatesPath.setMap(map);
     }, function (error) {
       console.log("Error: " + error.code);
     });
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=API_KEY&callback=initialize"></script>
-  </body>
-</html>
 
+  </script>
+
+  <!-- Google map API information-->
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=API_KEY_HERE&callback=initialize"></script>
+</body>
+
+</html>
