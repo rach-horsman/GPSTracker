@@ -26,4 +26,16 @@ Click Enable SSH and Use password authetication
 ## OPTIONS tab
 Click Eject media when finished and eable telemetry
 
-Once the write has been success you can insert the memory card into raspberry pi and power it up. 
+Once the write has been success you can insert the memory card into raspberry pi, connect it to your laptop, and begin. The details below show you how to login to the device. 
+
+# Talking to your Raspberry Pi
+
+If you're on a mac you'll work in a terminal window, on a woindows machine you'll need to use PuTTY. 
+
+Open a terminal window and ssh into the RaspberryPi
+
+ssh [username]@[hostname].local
+
+You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. THe initial line will change (possibly colour) to 
+
+[username]@[hostname]:
