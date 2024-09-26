@@ -1,3 +1,5 @@
+# Setting up your Raspberry Pi
+
 Install the lastest Rasbian OS in a memory card. For details visit www.raspberrypi.org/documentation/installation/installing-images/.
 
 ![image info](./Images/RaspberryPi-Imager.png)
@@ -8,7 +10,7 @@ When the pop-up appears you must click Edit Settings. This will open the OS cust
 
 In this window there are three tabs you need to interact with. 
 
-# GENERAL tab
+## GENERAL tab
 
 Add (and note down somewhere) 
 
@@ -18,10 +20,10 @@ Wi-Fi credentials of the network you'll be using
 
 ![image info](./Images/os-customisation-general.png)
 
-# SERVICES tab
+## SERVICES tab
 Click Enable SSH and Use password authetication
 
-# OPTIONS tab
+## OPTIONS tab
 Click Eject media when finished and eable telemetry
 
 Once the write has been success you can insert the memory card into raspberry pi and power it up. 
