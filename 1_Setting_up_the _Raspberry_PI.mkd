@@ -4,7 +4,13 @@ Install the lastest Rasbian OS in a memory card. For details visit www.raspberry
 
 Choose the correct device and the recommended OS 
 
-When the pop-up appears you must click Edit Settings. This will open the OS customisation. In this window add (and note down somewhere)  
+When the pop-up appears you must click Edit Settings. This will open the OS customisation. 
+
+In this window there are three tabs you need to interact with. 
+
+# GENERAL tab
+
+Add (and note down somewhere) 
 
 a username and password
 
@@ -12,4 +18,10 @@ Wi-Fi credentials of the network you'll be using
 
 ![image info](./Images/os-customisation-general.png)
 
-Insert the memory card into raspberry pi and power it up. 
+# SERVICES tab
+Click Enable SSH and Use password authetication
+
+# OPTIONS tab
+Click Eject media when finished and eable telemetry
+
+Once the write has been success you can insert the memory card into raspberry pi and power it up. 
