@@ -30,7 +30,7 @@ Once the write has been success you can insert the memory card into raspberry pi
 
 # Talking to your Raspberry Pi
 
-If you're on a mac you'll work in a terminal window, on a woindows machine you'll need to use PuTTY. 
+If you're on a mac you'll work in a terminal window, on a windows machine you'll need to use PuTTY. 
 
 Open a terminal window and ssh into the RaspberryPi
 
