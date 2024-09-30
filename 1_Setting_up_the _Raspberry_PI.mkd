@@ -38,7 +38,7 @@ Open a terminal window and ssh into the RaspberryPi
 ssh [username]@[hostname].local
 `
 
-You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. THe initial line will change (possibly colour) to 
+You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. The initial line will change (possibly colour) to 
 
 `
 [username]@[hostname]:
