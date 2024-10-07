@@ -75,7 +75,24 @@ cd Desktop
 mkdir GPS_Tracker
 cd GPS_Tracker
 
+In order to write the programs you'll need to create a directory on the desktop of the Raspberry Pi.
 
+So let's get onto the directory first
+
+'
+cd Despktop
+'
+
+Then make a folder (or directory) for the GPS tracker
+
+'
+mkdir GPS_Tracker
+'
+Then let's go into that directory.
+
+'
+cd GPS_Tracker
+'
 
 ```
 import serial
