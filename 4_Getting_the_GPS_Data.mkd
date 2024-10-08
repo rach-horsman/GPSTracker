@@ -61,7 +61,7 @@ To prepare for the coding we need to create a virtual environment on the Raspber
 python -m venv my-venv
 `
 
-Now we need to install a python library so we have access to the right commands:
+Now we need to install a few python libraries so we have access to the right commands:
 
 ```
 my-venv/bin/pip install pynmea2
@@ -89,12 +89,12 @@ cd GPS_Tracker
 
 Now finally we are ready to write the code. 
 
-You'll create the code in a text editor on the raspberry pi, in our case nano. 
+You'll create the code in a text editor on the RaspberryPi, in our case nano. 
 
 `
 nano gps_print.py
 `
-Once in the editor you can copy the gps_print.py code. THe exit and save.
+Once in the editor you can copy the gps_print.py code. Then exit and save.
 
 ```
 import serial
