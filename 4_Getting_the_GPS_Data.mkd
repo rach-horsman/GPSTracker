@@ -68,13 +68,6 @@ my-venv/bin/pip install pynmea2
 my-venv/bin/pip install pyserial
 my-venv/bin/pip install pyrebase4
 ```
-
-
-INFO RE FOLDER ETC NEEDED HERE
-cd Desktop
-mkdir GPS_Tracker
-cd GPS_Tracker
-
 In order to write the programs it's good practice to create a directory on the desktop of the Raspberry Pi.
 
 So let's get onto the desktop first
