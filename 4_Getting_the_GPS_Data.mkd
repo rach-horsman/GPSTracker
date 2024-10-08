@@ -54,7 +54,8 @@ sudo systemctl disable serial-getty@ttyS0.service
 
 ## Lets write the Python Code:
 
-To prepare for the coding we need to create an virtual environment on the RaspberryPi, this is simply good coding practice and allows us to ensure we can install the relevant librabries. 
+# Set up
+To prepare for the coding we need to create a virtual environment on the RaspberryPi, this is simply good coding practice and allows us to ensure we can install the relevant librabries. 
 
 `
 python -m venv my-venv
@@ -68,16 +69,15 @@ my-venv/bin/pip install pyserial
 my-venv/bin/pip install pyrebase4
 ```
 
-Now finally we are ready to write the code.
 
 INFO RE FOLDER ETC NEEDED HERE
 cd Desktop
 mkdir GPS_Tracker
 cd GPS_Tracker
 
-In order to write the programs you'll need to create a directory on the desktop of the Raspberry Pi.
+In order to write the programs it's good practice to create a directory on the desktop of the Raspberry Pi.
 
-So let's get onto the directory first
+So let's get onto the desktop first
 
 `
 cd Despktop
@@ -93,6 +93,15 @@ Then let's go into that directory.
 `
 cd GPS_Tracker
 `
+
+Now finally we are ready to write the code. 
+
+You'll create the code in a text editor on the raspberry pi, in our case nano. 
+
+`
+nano gps_print.py
+`
+Once in the editor you can copy the gps_print.py code. THe exit and save.
 
 ```
 import serial
@@ -120,7 +129,6 @@ To run this python code you'll use the command
 `
 my-venv/bin/python3 gps_print.py
 `
-
 
 and you will see a output like this:
 
