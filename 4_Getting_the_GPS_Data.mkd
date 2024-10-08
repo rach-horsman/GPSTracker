@@ -54,7 +54,7 @@ sudo systemctl disable serial-getty@ttyS0.service
 
 ## Lets write the Python Code:
 
-# Set up
+### Set up
 To prepare for the coding we need to create a virtual environment on the RaspberryPi, this is simply good coding practice and allows us to ensure we can install the relevant librabries. 
 
 `
