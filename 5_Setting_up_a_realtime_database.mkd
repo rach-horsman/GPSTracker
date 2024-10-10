@@ -4,17 +4,19 @@ We need somewhere for the RaspberryPi to send the GPS location. We're not storin
 
 Hence we're going to build a realtime database using Firebase.
 
+<p align="center">
 <img src="./Images/firebase_1.png" width="750">
+</p>
 
 <img src="./Images/firebase_2.png" width="750">
 
 <img src="./Images/firebase_4.png" width="750">
 
-<img src="./Images/firebase_5.png" width="150">
+<img src="./Images/firebase_5.png" width="450">
 
-<img src="./Images/firebase_6.png" width="150">
+<img src="./Images/firebase_6.png" width="450">
 
-<img src="./Images/firebase_7.png" width="150">
+<img src="./Images/firebase_7.png" width="750">
 
 <img src="./Images/firebase_8.png" width="750">
 
