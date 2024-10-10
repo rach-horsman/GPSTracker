@@ -8,27 +8,50 @@ Hence we're going to build a realtime database using Firebase.
 <img src="./Images/firebase_1.png" width="750">
 </p>
 
+<p align="center">
 <img src="./Images/firebase_2.png" width="750">
-
+</p>
+<p align="center">
 <img src="./Images/firebase_4.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_5.png" width="450">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_6.png" width="450">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_7.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_8.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_9.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_10.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_11.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_12.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_13.png" width="750">
+</p>
+<p align="center">
 
 <img src="./Images/firebase_14.png" width="750">
+</p>
 
