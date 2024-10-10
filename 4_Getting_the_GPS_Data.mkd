@@ -1,10 +1,7 @@
+# Checking for GPS signal
 
-!!!before checking this out make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED
-means that its receiving the data perfectly. Generally it takes few minutes to blink the LED after giving power to the
-module. So wait until that. And if its not blinking even after 5 minutes then go to a window side area or any place
-under the open sky. In the image below you can see how the blue LED should blink.
-
-
+Before continuing make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED
+means that its receiving GPS data. Generally it takes few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it's not blinking go to a window or any place under the open sky. 
 
 When the blue led is blinking, run the following command:
 
