@@ -1,15 +1,34 @@
+# Setting up the real time database
 
-![image info](./Images/firebase_1.png)
+We need somewhere for the RaspberryPi to send the GPS location. We're not storing historical data (in this project), just taking in the new latitude and longitude after each time period and writing over the old values. Eventually everytime this changes our tracking webpage (developed later) will get updated.
+
+Hence we're going to build a realtime database using Firebase.
+
+![image info](./Images/firebase_1.png|width=100)
+
 ![image info](./Images/firebase_2.png)
+
 ![image info](./Images/firebase_3.png)
+
 ![image info](./Images/firebase_4.png)
+
 ![image info](./Images/firebase_5.png)
+
 ![image info](./Images/firebase_6.png)
+
 ![image info](./Images/firebase_7.png)
+
 ![image info](./Images/firebase_8.png)
+
 ![image info](./Images/firebase_9.png)
+
 ![image info](./Images/firebase_10.png)
+
 ![image info](./Images/firebase_11.png)
+
 ![image info](./Images/firebase_12.png)
+
 ![image info](./Images/firebase_13.png)
+
 ![image info](./Images/firebase_14.png)
+
