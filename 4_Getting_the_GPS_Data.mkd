@@ -19,7 +19,7 @@ These numbers contain a whole host of data, and we need to filter it to pull out
 
 # Setup for writing the Python Code:
 
-Now before we write the python code to get the GPS data we need set up few things again. By default the Raspberry Pi uses serial port for this “console” login so if we want to use the serial port to get data from the GPS module we need to disable the console login. Now there are two serial ports in Raspberry pi 3: serial0 and serial1. But inbetween them serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. Now to see which port is connected with serial0 use the follwoing command:
+Now before we write the python code to get the GPS data we need set up few things again. By default the Raspberry Pi uses serial port for this “console” login so if we want to use the serial port to get data from the GPS module we need to disable the console login. Now there are two serial ports: serial0 and serial1. Serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. Now to see which port is connected with serial0 use the follwoing command:
 
 `
 ls -l /dev
