@@ -1,1 +1,5 @@
+# Sending the data to the realtime database
+
+We've already checked that we're able to identify the relevant latitude and longitude, and have been able to show this in the terminal window. Now the task is to get this sent to the realtime database so that at a later stage our tracking website can be updated. 
+
 
