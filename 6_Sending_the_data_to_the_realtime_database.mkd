@@ -4,7 +4,7 @@ We've already checked that we're able to identify the relevant latitude and long
 
 To do this you'll use a slightly updated version of the gps_print.py code, with your own information for the Firebase configuration (where the xxxx's are).
 
-Ensure your in the GPS_TRacker directory. 
+Ensure your in the GPS_Tracker directory. 
 
 `
 cd GPS_Tracker
