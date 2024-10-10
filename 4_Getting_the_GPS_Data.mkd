@@ -25,7 +25,7 @@ Now before we write the python code to get the GPS data we need set up few thing
 ls -l /dev
 `
 
-There are two possible outputs, either in the outout you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the follwing commands:
+There are two possible outputs, either in the output to the coma=mand above, you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the follwing commands:
 
 ```
 sudo systemctl stop serial-getty@ttyAMA0.service
