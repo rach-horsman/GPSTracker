@@ -14,5 +14,7 @@ The API key goes in place of the API_KEY_HERE text in line 107 of the index.html
 
 Right clicking on the index.htmle file should allow you to open the file using Live Server.
 
+Explore both of these files, you should be able to change the starting map, change the titles, colours, even the backdrop picture. Make the page your own!
+
 
 
