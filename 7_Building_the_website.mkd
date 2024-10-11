@@ -12,9 +12,7 @@ You'll need a Google Maps API key, which if you're doing this as part of an Arm 
 
 The API key goes in place of the API_KEY_HERE text in line 107 of the index.htmle file.
 
-" <script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=API_KEY_HERE&callback=initialize"></script>
-</body>"
+Right clicking on the index.htmle file should allow you to open the file using Live Server.
 
 
 
