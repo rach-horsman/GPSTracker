@@ -11,7 +11,9 @@ sudo cat /dev/ttyAMA0
 
 Now you will see a lots of data like shown in the below image. 
 
-![image info](./Images/GPS_data.png)
+<p align="center">
+<img src="./Images/GPS_data.png" width="500">
+</p>
 
 That basically means that its working. To stop this type Ctrl + c .
 
@@ -128,7 +130,7 @@ my-venv/bin/python3 gps_print.py
 
 and you will see a output like this:
 
-![image info](./Images/Print_gps.png)
-
-
+<p align="center">
+<img src="./Images/Print_gps.png" width="300">
+</p>
 
