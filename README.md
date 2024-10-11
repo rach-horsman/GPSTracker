@@ -8,4 +8,5 @@ You're going to need:
 - A laptop to which you can connect USB devices
 - A google account (also let's you access Firebase and Google Map developer)
 - A GitHub account
+- Visual Studio Code and the Live Server extension
 - For those on non-mac machines you will need Putty loaded
