@@ -42,19 +42,7 @@ sudo systemctl disable serial-getty@ttyS0.service
 ## Lets write the Python Code:
 
 ### Set up
-To prepare for the coding we need to create a virtual environment on the RaspberryPi, this is simply good coding practice and allows us to ensure we can install the relevant librabries. 
 
-`
-python -m venv my-venv
-`
-
-Now we need to install a few python libraries so we have access to the right commands:
-
-```
-my-venv/bin/pip install pynmea2
-my-venv/bin/pip install pyserial
-my-venv/bin/pip install pyrebase4
-```
 In order to write the programs it's good practice to create a directory on the desktop of the Raspberry Pi.
 
 So let's get onto the desktop first
@@ -73,6 +61,21 @@ Then let's go into that directory.
 `
 cd GPS_Tracker
 `
+You'll notice the starting text you have showing in your terminal window identifies that you're working in the directory.
+
+To prepare for the coding we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant librabries. 
+
+`
+python -m venv my-venv
+`
+
+Now we need to install a few python libraries so we have access to the right commands, it may take a few moments between each command for the libraries to install, just be patient:
+
+```
+my-venv/bin/pip install pynmea2
+my-venv/bin/pip install pyserial
+my-venv/bin/pip install pyrebase4
+```
 
 Now finally we are ready to write the code. 
 
