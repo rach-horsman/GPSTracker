@@ -2,6 +2,12 @@
 
 So far you've used some Bash script when interacting with the Raspberry Pi and written some Python code. The website you're going to show the GPS tracking information is going to be designed using HTML with some sections in Java. It will also call on a cascading style sheet (CSS). CSS is a style sheet language used for specifying the presentation and styling of the HTML site.
 
+This won't be done on the Raspberry Pi itse;f, but on your laptop in a program called Visual Studio Code, a free code editor. You'll need to make sure you've downladed this from https://code.visualstudio.com
+
+
+
+In this GitHub repository both the CSS and HTML files have been stored. 
+
 
 
 
