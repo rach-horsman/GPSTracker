@@ -17,26 +17,27 @@ Add (and note down somewhere)
 ![image info](./Images/os-customisation-general.png)
 
 ## SERVICES tab
-Click Enable SSH and Use password authetication
+Click Enable SSH and Use password authetication.
 
 ## OPTIONS tab
-- Click Eject media when finished, and enable telemetry
+- Click Eject media when finished, and enable telemetry.
 - Once the write has been successful, you can insert the memory card into the Raspberry Pi, connect it to your laptop, and begin. The details below show you how to login to the device. 
 
 # Talking to your Raspberry Pi
 
 If you're on a mac you'll work in a terminal window. On a windows machine, you'll need to use PuTTY. 
 
-- Open a terminal window and ssh into the RaspberryPi
+- Open a terminal window and ssh into the RaspberryPi:
 
 `
 ssh [username]@[hostname].local
 `
 
-- You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. The initial line will change (possibly colour) to 
+- You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. The initial line will change (possibly colour) to :
 
 `
 [username]@[hostname]:
 `
+
 Once logged in, you'll be able to modify the Raspberry Pi's setup, write and run programs, and navigate around the files and directories. This will all be from the terminal window using Bash commands. 
 
