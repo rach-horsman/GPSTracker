@@ -1,22 +1,18 @@
 # Setting up your Raspberry Pi
 
-Install the lastest Rasbian OS in a memory card. For details visit www.raspberrypi.org/documentation/installation/installing-images/.
+Install the lastest Raspbian OS on a memory card. For details, visit: www.raspberrypi.org/documentation/installation/installing-images/.
 
 ![image info](./Images/RaspberryPi-Imager.png)
 
-Choose the correct device and the recommended OS 
-
-When the pop-up appears you must click Edit Settings. This will open the OS customisation. 
-
-In this window there are three tabs you need to interact with. 
+- Choose the correct device and the recommended OS 
+- When the pop-up appears you must click Edit Settings. This will open the OS customisation. 
+- In this window there are three tabs you need to interact with. 
 
 ## GENERAL tab
 
 Add (and note down somewhere) 
-
-a username and password
-
-Wi-Fi credentials of the network you'll be using
+- A username and password
+- Wi-Fi credentials of the network you'll be using
 
 ![image info](./Images/os-customisation-general.png)
 
@@ -24,24 +20,23 @@ Wi-Fi credentials of the network you'll be using
 Click Enable SSH and Use password authetication
 
 ## OPTIONS tab
-Click Eject media when finished and eable telemetry
-
-Once the write has been success you can insert the memory card into raspberry pi, connect it to your laptop, and begin. The details below show you how to login to the device. 
+- Click Eject media when finished, and enable telemetry
+- Once the write has been successful, you can insert the memory card into the Raspberry Pi, connect it to your laptop, and begin. The details below show you how to login to the device. 
 
 # Talking to your Raspberry Pi
 
-If you're on a mac you'll work in a terminal window, on a windows machine you'll need to use PuTTY. 
+If you're on a mac you'll work in a terminal window. On a windows machine, you'll need to use PuTTY. 
 
-Open a terminal window and ssh into the RaspberryPi
+- Open a terminal window and ssh into the RaspberryPi
 
 `
 ssh [username]@[hostname].local
 `
 
-You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. The initial line will change (possibly colour) to 
+- You'll be asked for your password and the after a few moments you'll get confirmation that you're logged in. The initial line will change (possibly colour) to 
 
 `
 [username]@[hostname]:
 `
-Once logged in you'll be able to modify the Raspberry Pi's setup, write and run programs, and navigate around the files and directories. This will all be from the terminal window using Bash commands. 
+Once logged in, you'll be able to modify the Raspberry Pi's setup, write and run programs, and navigate around the files and directories. This will all be from the terminal window using Bash commands. 
 
