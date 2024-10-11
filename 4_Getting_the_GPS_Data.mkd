@@ -1,7 +1,7 @@
 # Checking for GPS signal
 
-Before continuing make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED
-means that it is receiving GPS data. Generally it takes few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it has not started blinking, go to a window or any place under the open sky. 
+Before continuing, make sure that the blue LED in the Neo 6M is blinking. The blinking blue LED
+means that it is receiving GPS data. It takes a few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it has not started blinking, move near a window or any place under the open sky. 
 
 When the blue led is blinking, run the following command:
 
@@ -9,15 +9,15 @@ When the blue led is blinking, run the following command:
 sudo cat /dev/ttyAMA0
 `
 
-Now you will see a lots of data like shown in the below image. 
+You should see lots of data, similar to what is shown in the image below. 
 
 <p align="center">
 <img src="./Images/GPS_data.png" width="500">
 </p>
 
-That basically means that its working. To stop this type Ctrl + c .
+That means it's working. To stop this, type Ctrl + c .
 
-These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longtitude. For that we'll write a short Python program and use a special command NMEAStreamReader().
+These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longtitude. For that, we'll write a short Python program and use a special command, `NMEAStreamReader()`.
 
 # Setup for writing the Python Code:
 
