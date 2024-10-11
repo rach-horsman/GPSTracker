@@ -43,3 +43,5 @@ You'll be asked for your password and the after a few moments you'll get confirm
 `
 [username]@[hostname]:
 `
+Once logged in you'll be able to modify the Raspberry Pi's setup, write and run programs, and navigate around the files and directories. This will all be from the terminal window using Bash commands. 
+
