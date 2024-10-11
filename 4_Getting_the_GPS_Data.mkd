@@ -61,7 +61,20 @@ Then let's go into that directory.
 `
 cd GPS_Tracker
 `
-You'll notice the starting text you have showing in your terminal window identifies that you're working in the directory.
+You'll notice the starting text you have showing in your terminal window identifies that you're working in the directory. 
+
+If you want to go backwards out of a directory you can using the command 
+
+`
+cd ..
+`
+Using the command 
+`
+ls
+` 
+Will list what directories and files are contained in the directory you're in.
+
+These commands are 
 
 To prepare for the coding we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant librabries. 
 
