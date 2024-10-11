@@ -70,6 +70,6 @@ In the terminal window you should, after a few moments the GPS data and confirma
 Go back to your Firebase realtime database to check that it's receiving the GPS information. 
 
 <p align="center">
-<img src="./Images/Realtime_database.png" width="500">
+<img src="./Images/Realtime_database.png" width="750">
 </p>
 
