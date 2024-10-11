@@ -6,7 +6,9 @@ You're going to need:
 - A power pack
 - Wifi access (you'll need the network and password information)
 - A laptop to which you can connect USB devices
-- A google account (also let's you access Firebase and Google Map developer)
+- A Google account (also let's you access Firebase and Google Map developer)
 - A GitHub account
 - Visual Studio Code and the Live Server extension
-- For those on non-mac machines you will need Putty loaded
+
+[!NOTE]
+If you are using Windows or Linux, you will also need to install [PuTTY](https://www.putty.org/)
