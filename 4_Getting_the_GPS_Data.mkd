@@ -1,7 +1,7 @@
 # Checking for GPS signal
 
-Before continuing make sure that the blue LED in the Neo 6M is blinking. Basically the blinking of blue LED
-means that it is receiving GPS data. Generally it takes few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it has not started blinking, go to a window or any place under the open sky. 
+Before continuing, make sure that the blue LED in the Neo 6M is blinking. The blinking blue LED
+means that it is receiving GPS data. It takes a few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it has not started blinking, move near a window or any place under the open sky. 
 
 When the blue led is blinking, run the following command:
 
@@ -9,25 +9,29 @@ When the blue led is blinking, run the following command:
 sudo cat /dev/ttyAMA0
 `
 
-Now you will see a lots of data like shown in the below image. 
+You should see lots of data, similar to what is shown in the image below. 
 
 <p align="center">
 <img src="./Images/GPS_data.png" width="500">
 </p>
 
-That basically means that its working. To stop this type Ctrl + c .
+That means it's working. To stop this, type Ctrl + c .
 
-These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longtitude. For that we'll write a short Python program and use a special command NMEAStreamReader().
+These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longtitude. For that, we'll write a short Python program and use a special command, `NMEAStreamReader()`.
 
 # Setup for writing the Python Code:
 
-Now before we write the python code to get the GPS data we need set up few things again. By default the Raspberry Pi uses serial port for this “console” login so if we want to use the serial port to get data from the GPS module we need to disable the console login. Now there are two serial ports: serial0 and serial1. Serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. Now to see which port is connected with serial0 use the follwoing command:
+Before we write the python code to get the GPS data, we need set up a few things again.
+
+By default, the Raspberry Pi uses serial port for this “console” login, so if we want to use the serial port to get data from the GPS module we need to disable the console login.
+
+There are two serial ports: serial0 and serial1. Serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. To see which port is connected with serial0, use the follwoing command:
 
 `
 ls -l /dev
 `
 
-There are two possible outputs, either in the output to the coma=mand above, you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the follwing commands:
+There are two possible outputs. Either in the output to the command above, you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the follwing commands:
 
 ```
 sudo systemctl stop serial-getty@ttyAMA0.service
@@ -65,26 +69,26 @@ cd GPS_Tracker
 `
 You'll notice the starting text you have showing in your terminal window identifies that you're working in the directory. 
 
-If you want to go backwards out of a directory you can using the command 
-
+If you want to go backwards out of a directory, you can using the command
 `
 cd ..
 `
+
 Using the command 
 `
 ls
 ` 
-Will list what directories and files are contained in the directory you're in.
+will list what directories and files are contained in the directory you're in.
 
 These commands are 
 
-To prepare for the coding we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant librabries. 
+To prepare for the coding, we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant librabries.
 
 `
 python -m venv my-venv
 `
 
-Now we need to install a few python libraries so we have access to the right commands, it may take a few moments between each command for the libraries to install, just be patient:
+Now we need to install a few python libraries so we have access to the right commands. It may take a few moments between each command for the libraries to install, so be patient:
 
 ```
 my-venv/bin/pip install pynmea2
@@ -92,13 +96,14 @@ my-venv/bin/pip install pyserial
 my-venv/bin/pip install pyrebase4
 ```
 
-Now finally we are ready to write the code. 
+Now finally we are ready to write the code! 
 
-You'll create the code in a text editor on the RaspberryPi, in our case nano. 
+You'll create the code in a text editor on the RaspberryPi (in our case, nano). 
 
 `
 nano gps_print.py
 `
+
 Once in the editor you can copy the gps_print.py code. Then exit and save.
 
 ```
