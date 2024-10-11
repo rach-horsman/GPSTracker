@@ -61,7 +61,15 @@ Run this python code
 `
 my-venv/bin/python3 gps_send.py
 `
+In the terminal window you should, after a few moments the GPS data and confirmation that it's been sent succesfully to the realtime database
+
+<p align="center">
+<img src="./Images/Sent_data.png" width="500">
+</p>
 
 Go back to your Firebase realtime database to check that it's receiving the GPS information. 
 
+<p align="center">
+<img src="./Images/Realtime_database.png" width="500">
+</p>
 
