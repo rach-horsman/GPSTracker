@@ -128,7 +128,7 @@ my-venv/bin/python3 gps_print.py
 
 and you will see a output like this:
 
-![image info](./Images/Print_gps_data.png)
+![image info](./Images/Print_gps.png)
 
 
 
