@@ -10,11 +10,11 @@ Create copies of the index.html and mapp.css files in Visual Studio Code.
 
 You'll need a Google Maps API key, which if you're doing this as part of an Arm Education workshop will be provided to you, if not you can follow these instructions https://developers.google.com/maps/documentation/embed/get-api-key
 
-The API key goes in place of the API_KEY_HERE text in line 
+The API key goes in place of the API_KEY_HERE text in line 107 of the index.htmle file.
 
- <script
+" <script
     src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=API_KEY_HERE&callback=initialize"></script>
-</body>
+</body>"
 
 
 
