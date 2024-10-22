@@ -1,3 +1,11 @@
+# Setting up the kit
+
+So you'll firstly need to attach the module with its arial
+
+PICTURE
+
+Then wiring up the module to your Raspberry Pi. The diagram below shows the connections to a Raspberry Pi 3 but the pins will be in the same position on the zero (second picture below)
+
 ![image info](./Images/neo.png)
 
 ![image info](./Images/Raspberry-PI-Zero-Pinout-schema.jpg)
