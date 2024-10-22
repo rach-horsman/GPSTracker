@@ -1,1 +1,3 @@
 ![image info](./Images/neo.png)
+
+![image info](./Images/Raspberry-PI-Zero-Pinout-schema.jpg)
