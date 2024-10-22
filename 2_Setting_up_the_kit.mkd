@@ -2,7 +2,7 @@
 
 So you'll firstly need to attach the module with its arial
 
-PICTURE
+![image info](./Images/gps_module.jpeg)
 
 Then wiring up the module to your Raspberry Pi. The diagram below shows the connections to a Raspberry Pi 3 but the pins will be in the same position on the zero (second picture below)
 
