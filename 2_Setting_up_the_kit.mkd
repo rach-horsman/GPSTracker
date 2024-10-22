@@ -1,6 +1,6 @@
 # Setting up the kit
 
-So you'll firstly need to attach the module with its arial
+So you'll firstly need to attach the module with its arial, it's a push and click but can be a little stiff. 
 
 ![image info](./Images/gps_module.jpeg)
 
