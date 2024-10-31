@@ -11,4 +11,4 @@ You're going to need:
 - Visual Studio Code and the Live Server extension
 
 > [!NOTE]  
-> If you are using Windows or Linux, you will also need to install [PuTTY](https://www.putty.org/)
+> If you are using Windows, you will also need to install [PuTTY](https://www.putty.org/)
