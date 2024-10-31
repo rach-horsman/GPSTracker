@@ -21,10 +21,6 @@ enable_uart=1
 force_turbo=1
 `````
 
-It will look something like this:
-
-PICTURE TO ADD
-
 Now save this by typing ctrl +x, then type y and press enter.
 
 ## STEP 2
