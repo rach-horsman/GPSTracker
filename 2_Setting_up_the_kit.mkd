@@ -10,4 +10,4 @@ Then wiring up the module to your Raspberry Pi. The diagram below shows the conn
 
 ![image info](./Images/Raspberry-PI-Zero-Pinout-schema.jpg)
 
-Finally connect the power (pwr) with your computer USB (you may need an adapter).
+Finally connect the power (pwr). THis could be to a battery pack, mains adapter or your computer USB (you may need an adapter).
