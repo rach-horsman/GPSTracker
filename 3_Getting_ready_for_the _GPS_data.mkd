@@ -2,7 +2,7 @@
  
 We need to modify a few things so that the RaspberryPi works with the GPS module, shows information on your laptop screen, and is able to send it to a realtime database.
 
-## STEP 1 (NEED TO VERIFY THIS....)
+## STEP 1
 First we need to edit the /boot/firmware/config.txt file. 
 
 Open this file in any text editor. Here I am using nano:
