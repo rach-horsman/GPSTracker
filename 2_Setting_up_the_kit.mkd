@@ -6,8 +6,6 @@ So you'll firstly need to attach the module with its arial, it's a push and clic
 
 Then wiring up the module to your Raspberry Pi. The diagram below shows the connections to a Raspberry Pi 3 but the pins will be in the same position on the zero (second picture below)
 
-![image info](./Images/neo.png)
-
-![image info](./Images/Raspberry-PI-Zero-Pinout-schema.jpg)
+![image info](./Images/pizerogps.png)
 
 Finally connect the power (pwr). THis could be to a battery pack, mains adapter or your computer USB (you may need an adapter).
