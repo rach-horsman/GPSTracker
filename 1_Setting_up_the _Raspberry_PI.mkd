@@ -13,7 +13,7 @@ Install the lastest Raspbian OS on a memory card. For details, visit: www.raspbe
 Add (and note down somewhere) 
 - The host name
 - A username and password
-- Wi-Fi credentials of the network you'll be using
+- Wi-Fi credentials of the network you'll be using (SSID and password)
 
 You can also set the time zone and keyboard.
 
