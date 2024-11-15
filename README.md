@@ -3,7 +3,7 @@
 You're going to need:
 - A RaspberryPi Zero W (and associated cables)
 - A neo 6M GPS module
-- A power pack such as [UPS HAT(C)](https://www.waveshare.com/wiki/UPS_HAT_(C))
+- A power pack such as [UPS HAT(C)](https://www.waveshare.com/wiki/UPS_HAT_(C)) If you use such a power pack you will need to follow the installation guide.
 - Wifi access (you'll need the network and password information)
 - A laptop to which you can connect USB devices
 - A Google account (also let's you access Firebase and Google Map developer)
