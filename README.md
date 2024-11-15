@@ -11,4 +11,4 @@ You're going to need:
 - [Visual Studio Code and the Live Server extension](https://code.visualstudio.com)
 
 > [!NOTE]  
-> If you are using Windows, you will also need to install [PuTTY](https://www.putty.org/)
+> If you are using Windows or a Chromebook, you will need to be able to ssh through a terminal window, this may take some preperation. 
