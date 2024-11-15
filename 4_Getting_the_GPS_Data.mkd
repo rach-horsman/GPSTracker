@@ -54,7 +54,7 @@ In order to write the programs it's good practice to create a directory on the d
 So let's get onto the desktop first
 
 `
-cd Despktop
+cd Desktop
 `
 
 Then make a folder (or directory) for the GPS tracker
