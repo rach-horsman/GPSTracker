@@ -24,7 +24,9 @@ Click Enable SSH and Use password authetication.
 
 ## OPTIONS tab
 - Click Eject media when finished, and enable telemetry.
-- Once the write has been successful, you can insert the memory card into the Raspberry Pi, connect it to a power source (a battery pack, your laptop or the mains), and begin. The details below show you how to login to the device.
+
+
+Once the write has been successful, you can insert the memory card into the Raspberry Pi, connect it to a power source (a battery pack, your laptop or the mains), and begin. The details below show you how to login to the device.
 
 You should notice that the green LED on the RaspberryPi starts flashing. 
 
@@ -32,7 +34,7 @@ You should notice that the green LED on the RaspberryPi starts flashing.
 
 Make sure that the computer you are using is on the same network as you have set up the Raspberry Pi to join.
 
-If you're on a mac you'll work in a terminal window. On a windows machine or chrome book, you'll need to research how to enable a terminal widow that can ssh.
+If you're on a mac you'll work in a terminal window. On a windows machine or chromebook, you'll need to research how to enable a terminal widow that can ssh.
 
 For example on a chromebook you can download the secure shell extension to chrome (complete the information) and enable Linux developer. 
 
