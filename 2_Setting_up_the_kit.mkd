@@ -8,4 +8,4 @@ Then wiring up the module to your Raspberry Pi. The diagram below shows the conn
 
 ![image info](./Images/pizerogps.png)
 
-Finally connect the power (pwr). This could be to a battery pack, mains adapter or your computer USB (you may need an adapter).
+Finally connect the power (pwr). This could be to a battery pack, mains adapter or your computer USB (you may need an adapter). When you do this the green light on the RaspberryPi will start flashing (it's booting up) and after a while the blue LED on the GPS module will also flash. This means it's receiving data from GPS satellites.  
