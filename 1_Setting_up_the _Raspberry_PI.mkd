@@ -15,6 +15,8 @@ Add (and note down somewhere)
 - A username and password
 - Wi-Fi credentials of the network you'll be using
 
+You can also set the time zone and keyboard.
+
 ![image info](./Images/os-customisation-general.png)
 
 ## SERVICES tab
