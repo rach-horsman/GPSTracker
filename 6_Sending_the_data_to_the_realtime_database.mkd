@@ -27,6 +27,8 @@ firebaseConfig={"apiKey": "xxxx",
 
     "authDomain": "xxxx",
 
+    "databaseURL": "xxxx"
+
     "projectId": "xxxx",
 
     "storageBucket": "xxxx",
@@ -35,7 +37,6 @@ firebaseConfig={"apiKey": "xxxx",
 
     "appId": "xxxx",
 
-    "databaseURL": "xxxx"
     }
 
 firebase=pyrebase.initialize_app(firebaseConfig)
