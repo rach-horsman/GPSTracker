@@ -100,6 +100,7 @@ This demo was produced using version 4.8 of pyrebase and 3.11.2 of python. There
 `
 my-venv/bin/pip3 install --force-reinstall -v cryptography==42.0.8
 `
+
 As new versions are published further adaptatioins may be needed.
 
 Now finally we are ready to write the code! 
