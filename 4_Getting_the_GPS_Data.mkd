@@ -1,9 +1,11 @@
 # Checking for GPS signal
+After rebooting in the previous step, you will need to SSH back into the the Raspberry Pi.
+If you do not remember how to do this, see section 1 for details.
 
 Before continuing, make sure that the blue LED in the Neo 6M is blinking. The blinking blue LED
 means that it is receiving GPS data. It takes a few minutes for the blinking to start after powering up the module. If after 5 - 8 mins it has not started blinking, move near a window or any place under the open sky. 
 
-When the blue led is blinking, run the following command:
+When the blue LED is blinking, run the following command:
 
 `
 sudo cat /dev/ttyAMA0
@@ -15,37 +17,37 @@ You should see lots of data, similar to what is shown in the image below.
 <img src="./Images/GPS_data.png" width="500">
 </p>
 
-That means it's working. To stop this, type Ctrl + c .
+This means it's working. To stop this, press Ctrl + C .
 
-These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longtitude. For that, we'll write a short Python program and use a special command, `NMEAStreamReader()`.
+These numbers contain a whole host of data, and we need to filter it to pull out the latitude and longitude. For that, we'll write a short Python program and use a special command, `NMEAStreamReader()`.
 
 # Setup for writing the Python Code:
 
-Before we write the python code to get the GPS data, we need set up a few things again.
+Before we write the python code to get the GPS data, we need to set up a few things.
 
-By default, the Raspberry Pi uses serial port for this “console” login, so if we want to use the serial port to get data from the GPS module we need to disable the console login.
+By default, the Raspberry Pi uses a serial port for this “console” login, so if we want to use the serial port to get data from the GPS module we will need to disable the console login.
 
-There are two serial ports: serial0 and serial1. Serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. To see which port is connected with serial0, use the follwoing command:
+There are two serial ports: serial0 and serial1. Serial0 will point to GPIO pins 14 and 15, so we have to use serial 0. To see which port is connected with serial0, use the following command:
 
 `
 ls -l /dev
 `
 
-There are two possible outputs. Either in the output to the command above, you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the follwing commands:
+There are two possible outputs. Either, you'll see that serial0 is linked with ttyAMA0, in which case to disable the console you need to use the following commands:
 
 ```
 sudo systemctl stop serial-getty@ttyAMA0.service
 sudo systemctl disable serial-getty@ttyAMA0.service
 ```
 
-Or serial0 is linked with ttyS0. Therefore, to disable the console you need to use the follwing commands:
+Or that serial0 is linked with ttyS0. Therefore, to disable the console you need to use the following commands:
 
 ```
 sudo systemctl stop serial-getty@ttyS0.service
 sudo systemctl disable serial-getty@ttyS0.service
 ```
 
-## Lets write the Python Code:
+## Let’s write the Python Code:
 
 ### Set up
 
@@ -62,12 +64,12 @@ Then make a folder (or directory) for the GPS tracker
 `
 mkdir GPS_Tracker
 `
-Then let's go into that directory.
+Let's go into that directory.
 
 `
 cd GPS_Tracker
 `
-You'll notice the starting text you have showing in your terminal window identifies that you're working in the directory. 
+You'll notice that the text before where you type in the terminal identifies that you're working in the directory. 
 
 If you want to go backwards out of a directory, you can using the command
 `
@@ -80,38 +82,42 @@ ls
 ` 
 will list what directories and files are contained in the directory you're in.
 
-These commands are 
-
-To prepare for the coding, we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant librabries.
+To prepare for the coding, we need to create a virtual environment on the RaspberryPi, allowing us to ensure we can install the relevant libraries.
 
 `
-python -m venv my-venv
+python -m venv gps-venv
 `
+Next, we will need to activate the venv, use the following command:
+`
+source gps-venv/bin/activate   
+` 
+You will need to re-run this after every reboot.
 
 Now we need to install a few python libraries so we have access to the right commands. It may take a few moments between each command for the libraries to install, so be patient:
 
-```
-my-venv/bin/pip install pynmea2
-my-venv/bin/pip install pyserial
-my-venv/bin/pip install pyrebase4
-```
-This demo was produced using version 4.8 of pyrebase and 3.11.2 of python. Therefor a small work around is need as these are not completely compatible and can trip up. This can easily be acheived by enforcing a particular veriosn of the cryptography library.
-
 `
-my-venv/bin/pip3 install --force-reinstall -v cryptography==42.0.8
+pip install pynmea2
+pip install pyserial
 `
-
-As new versions are published further adaptatioins may be needed.
+This demo was produced using version 4.8 of pyrebase and 3.11.2 of python. Therefore a small workaround is needed as they are not completely compatible and may have issues. This can easily be achieved by enforcing a particular version of the cryptography library.
+`
+pip3 install --force-reinstall -v cryptography==42.0.8
+`
+Finally, install one more library:
+`
+pip install pyrebase4
+`
+As new versions are published further adaptations may be needed.
 
 Now finally we are ready to write the code! 
 
-You'll create the code in a text editor on the RaspberryPi (in our case, nano). 
+You'll create the code in a text editor on the Raspberry Pi (in our case, nano). 
 
 `
 nano gps_print.py
 `
 
-Once in the editor you can copy the gps_print.py code. Then exit and save.
+Once in the editor you can copy the gps_print.py code. Then save and exit.
 
 ```
 import serial
@@ -129,14 +135,14 @@ while True:
 		newmsg=pynmea2.parse(n_data)
 		lat=newmsg.latitude
 		lng=newmsg.longitude
-		gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
+		gps = "Latitude=" + str(lat) + " and Longitude=" + str(lng)
 		print(gps)
 ```
 
 To run this python code you'll use the command
 
 `
-my-venv/bin/python3 gps_print.py
+python3 gps_print.py
 `
 
 and you will see a output like this:
@@ -144,4 +150,3 @@ and you will see a output like this:
 <p align="center">
 <img src="./Images/Print_gps.png" width="300">
 </p>
-
