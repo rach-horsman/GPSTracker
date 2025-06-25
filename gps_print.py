@@ -14,5 +14,5 @@ while True:
 		newmsg=pynmea2.parse(n_data)
 		lat=newmsg.latitude
 		lng=newmsg.longitude
-		gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
+		gps = "Latitude=" + str(lat) + " and Longitude=" + str(lng)
 		print(gps)
