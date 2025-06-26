@@ -1,17 +1,17 @@
 # Getting the GPS data
  
-We need to modify a few things so that the RaspberryPi works with the GPS module, shows information on your laptop screen, and is able to send it to a realtime database.
+We need to modify a few things so that the Raspberry Pi works with the GPS module, shows information on your laptop screen, and is able to send it to a realtime database, which we will set up later.
 
 ## STEP 1
-First we need to edit the /boot/firmware/config.txt file. 
+First, we need to edit the /boot/firmware/config.txt file. 
 
-Open this file in any text editor. Here I am using nano:
+Open this file in any text editor. Here I am using nano, but alternatives such as micro will also work, just make sure to use sudo to ensure that you have the correct permissions:
 
 `
 sudo nano /boot/firmware/config.txt
 `
 
-At the end of the file, add the follwing lines:
+At the end of the file, add the following lines:
 
 `````
 dtparam=spi=on
@@ -21,10 +21,10 @@ enable_uart=1
 force_turbo=1
 `````
 
-Now save this by typing ctrl +x, then type y and press enter.
+Now save this by typing CTRL + S, then exit by pressing CTRL + X.
 
 ## STEP 2
-Raspbian uses UART as a serial console and so we need to turn off that functionality. To do so, we need to change the /boot/firmware/cmdline.txt file. 
+Raspberry Pi OS uses UART as a serial console but we need to turn off that functionality. To do so, we will change the /boot/firmware/cmdline.txt file. 
 
 For safety, before editing the file make a backup of that using the following command:
 
@@ -39,19 +39,19 @@ Then open the original file:
 sudo nano /boot/firmware/cmdline.txt
 `
 
-Replace the entire content with the follwing line. (Delete everything in it and write down the following content):
+Replace the entire content with the following line. (Delete everything in it and write down the following content). Please note that if you are using nano and many other terminal-based editors, you will use CTRL + SHIFT + V instead of the more common CTRL + V to paste:
 
 `
 dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
 `
 
-Now save this by typing ctrl +x, then type y and press enter.
+Now save this by typing CTRL + S, then exit by pressing CTRL + X.
 
 ## STEP 3
-Reboot pi using:
+Reboot the Raspberry Pi using:
 
 `
 sudo reboot
 `
 
-After the reboot, now its time to check how our GPS module is working.
+After the reboot, now it's time to check how our GPS module is working.
