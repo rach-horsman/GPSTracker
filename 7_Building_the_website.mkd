@@ -10,7 +10,7 @@ Create copies of the index.html and map.css files in Visual Studio Code.
 
 You'll need a Google Maps API key, which if you're doing this as part of an Arm Education workshop will be provided to you, if not you can follow these instructions https://developers.google.com/maps/documentation/embed/get-api-key
 
-The API key goes in place of the API_KEY_HERE text in line 107 of the index.html file.
+The API key goes in place of the API_KEY_HERE text in line 106 of the index.html file.
 Also, you need to fill in the firebase information also in index.html
 
 Right clicking on the index.html file should allow you to open the file using Live Server.
