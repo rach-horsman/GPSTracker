@@ -1,0 +1,138 @@
+<!-- Declare the document type -->
+<!doctype html>
+<html>
+
+<head>
+  <!-- Page title in the browser tab -->
+  <title>Realtime GPS Tracker Pilot</title>
+
+  <!-- Link to custom CSS stylesheet for map and page styling -->
+  <link rel="stylesheet" href="map.css">
+
+  <!-- Include Bootstrap CSS for layout and styling -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+  <!-- Include Bootstrap JS for responsive behavior -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Optional background divs for design or styling -->
+  <div class="bg"></div>
+  <div class="bg-others">
+
+    <!-- Bootstrap container for layout -->
+    <div class="container">
+      <h1>Realtime GPS Tracker with Raspberry PI Pilot</h1>
+
+      <!-- Horizontal line -->
+      <center>
+        <hr style="height:2px; border:none; color:#ffffff; background-color:#ffffff; width:35%; margin: 0 auto 0 auto;">
+      </center>
+
+      <!-- Attribution or credits -->
+      <p>by Arm Education with thanks to SPARKLERS: We Are The Makers</p>
+
+      <!-- Map container -->
+      <center>
+        <div id="map-canvas"></div>
+      </center>
+    </div>
+  </div>
+
+  <script>
+    // Set initial coordinates (e.g., school, HQ, or project start point)
+    window.lat = 51.2635;
+    window.lng = -0.23809;
+
+    // Declare variables for the map, marker, and path coordinates
+    var map;
+    var mark;
+    var lineCoords = [];
+
+    // Initialize the map and marker
+    var initialize = function () {
+      map = new google.maps.Map(
+        document.getElementById('map-canvas'), 
+        {
+          center: { lat: lat, lng: lng },
+          zoom: 12
+        }
+      );
+
+      mark = new google.maps.Marker({
+        position: { lat: lat, lng: lng },
+        map: map
+      });
+    };
+
+    // Make the initialize function accessible from the window scope
+    window.initialize = initialize;
+  </script>
+
+  <!-- Firebase setup and real-time GPS updates -->
+  <script type="module">
+    // Import Firebase SDK modules for app initialization and database access
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+    // Firebase project credentials (replace ADD_INFO with actual config values)
+    const firebaseConfig = {
+      apiKey: "ADD_INFO",
+      authDomain: "ADD_INFO",
+      databaseURL: "ADD_INFO",
+      projectId: "ADD_INFO",
+      storageBucket: "ADD_INFO",
+      messagingSenderId: "ADD_INFO",
+      appId: "ADD_INFO"
+    };
+
+    // Initialize Firebase app and database reference
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase();
+
+    // Create a reference to the root of the database (you could use a specific child path too)
+    const dbRef = ref(database);
+
+    // Listen for value changes in the database
+    onValue(dbRef, (snapshot) => {
+      var gps = snapshot.val();
+
+      // Output values to console for debugging
+      console.log(gps.LAT);
+      console.log(gps.LNG);
+
+      // Update coordinates
+      lat = gps.LAT;
+      lng = gps.LNG;
+
+      // Re-center the map and move the marker
+      map.setCenter({ lat: lat, lng: lng, alt: 0 });
+      mark.setPosition({ lat: lat, lng: lng, alt: 0 });
+
+      // Draw path line from previous to current location
+      lineCoords.push(new google.maps.LatLng(lat, lng));
+      var lineCoordinatesPath = new google.maps.Polyline({
+        path: lineCoords,
+        geodesic: true,
+        strokeColor: '#2E10FF'
+      });
+
+      lineCoordinatesPath.setMap(map);  // Add the line to the map
+    }, function (error) {
+      // Log any errors that occur during data retrieval
+      console.log("Error: " + error.code);
+    });
+  </script>
+
+  <!-- Load the Google Maps API -->
+  <!-- Replace "xxxxx" with your actual Google Maps API key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=xxxxx&callback=initialize" async defer></script>
+</body>
+
+</html>
