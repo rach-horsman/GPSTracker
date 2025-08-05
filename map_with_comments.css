@@ -1,0 +1,62 @@
+/* Ensure the body and html elements take up the full height of the viewport */
+body, html {
+  height: 100%;
+}
+
+/* Style for the background image layer */
+.bg {
+  /* Set the background image URL */
+  background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
+
+  /* Apply a slight blur to the background for a frosted glass effect */
+  filter: blur(1px);           /* Standard blur filter */
+  -webkit-filter: blur(1px);   /* Safari-specific version */
+
+  /* Stretch to fill full height of the page */
+  height: 100%;
+
+  /* Position the background image nicely */
+  background-position: center;     /* Center the image */
+  background-repeat: no-repeat;    /* Prevent tiling */
+  background-size: cover;          /* Scale image to cover the entire element */
+}
+
+/* Overlay layer for content (sits above the blurred background) */
+.bg-others {
+  background-color: rgb(0, 0, 0);           /* Fallback solid black */
+  background-color: rgba(0, 0, 0, 0.4);     /* Semi-transparent black overlay */
+
+  color: white;             /* Text color */
+  font-weight: bold;        /* Make text bold */
+  text-align: center;       /* Center-align text */
+
+  border: 3px solid #f1f1f1;    /* Light border around the content box */
+
+  position: absolute;       /* Position the box absolutely */
+  top: 50%;                 /* Move to vertical center */
+  left: 50%;                /* Move to horizontal center */
+  transform: translate(-50%, -50%); /* Offset the box to be perfectly centered */
+
+  z-index: 2;               /* Ensure it appears above the background */
+
+  width: 80%;               /* Responsive width */
+  padding: 20px;            /* Padding inside the box */
+}
+
+/* Style for horizontal rule (optional – class used in HTML to define the line style) */
+.hr1 {
+  color: white;
+}
+
+/* Style for the map container */
+#map-canvas {
+  width: 720px;               /* Fixed width of the map */
+  height: 400px;              /* Fixed height of the map */
+
+  border: 6px solid #056af7;  /* Bright blue border around the map */
+
+  /* Shadow effect for 3D appearance */
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),     /* Outer shadow */
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);   /* Larger outer shadow */
+}
