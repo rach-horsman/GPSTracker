@@ -1,4 +1,4 @@
-# Setting Up The Kit
+# Setting up the Kit
 
 First, attach the module with its antenna. It's a push and click, but can be a little stiff. 
 
