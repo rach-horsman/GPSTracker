@@ -1,12 +1,12 @@
-# Setting up the kit
+# Setting Up The Kit
 
-First, attach the module with its antenna, it's a push and click but can be a little stiff. 
+First, attach the module with its antenna. It's a push and click, but can be a little stiff. 
 
 ![image info](./Images/gps_module.jpeg)
 
-Next, you will need to wire the module using jumper wire to your Raspberry Pi . The diagram below shows a Raspberry Pi 3 but the GPIO pins will be in the same position on the Zero, or any modern Raspberry Pi (second picture below)
+Next, you will need to wire the module using jumper wires to your Raspberry Pi. The diagram below shows a Raspberry Pi 3, but the GPIO pins will be in the same position on the Zero or any modern Raspberry Pi (second picture below).
 
 ![image info](./Images/pizerogps.png)
 
-Finally ,connect the power (pwr). This could be to a battery pack, mains adapter or one of your computer’s USB ports (you may need an adapter). When you do this, the green light on the Raspberry Pi will start flashing (it's booting up).
-After a while, the blue LED on the GPS module will also flash, this means it's receiving data from GPS satellites.
+Finally, connect the power (PWR). This could be to a battery pack, mains adapter or one of your computer’s USB ports (you may need an adapter). When you do this, the green light on the Raspberry Pi will start flashing. This means it's booting up.
+After a while, the blue LED on the GPS module will also flash. This means it's receiving data from GPS satellites.
