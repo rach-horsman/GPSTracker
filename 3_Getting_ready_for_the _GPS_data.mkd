@@ -1,11 +1,11 @@
-# Getting the GPS data
+# Getting the GPS Data
  
-We need to modify a few things so that the Raspberry Pi works with the GPS module, shows information on your laptop screen, and is able to send it to a realtime database, which we will set up later.
+We need to modify a few things so that the Raspberry Pi works with the GPS module, shows information on your laptop screen, and is able to send it to a real-time database, which we will set up later.
 
 ## STEP 1
 First, we need to edit the /boot/firmware/config.txt file. 
 
-Open this file in any text editor. Here I am using nano, but alternatives such as micro will also work, just make sure to use sudo to ensure that you have the correct permissions:
+Open this file in any text editor. Here I am using nano, but alternatives such as micro will also work. Just make sure to use sudo to ensure that you have the correct permissions:
 
 `
 sudo nano /boot/firmware/config.txt
@@ -24,9 +24,9 @@ force_turbo=1
 Now save this by typing CTRL + S, then exit by pressing CTRL + X.
 
 ## STEP 2
-Raspberry Pi OS uses UART as a serial console but we need to turn off that functionality. To do so, we will change the /boot/firmware/cmdline.txt file. 
+Raspberry Pi OS uses UART as a serial console, but we need to turn off that functionality. To do so, we will change the /boot/firmware/cmdline.txt file. 
 
-For safety, before editing the file make a backup of that using the following command:
+For safety, before editing the file, make a backup using the following command:
 
 
 `
@@ -39,7 +39,7 @@ Then open the original file:
 sudo nano /boot/firmware/cmdline.txt
 `
 
-Replace the entire content with the following line. (Delete everything in it and write down the following content). Please note that if you are using nano and many other terminal-based editors, you will use CTRL + SHIFT + V instead of the more common CTRL + V to paste:
+Replace the entire content with the following line (delete everything in it and write the following content). Please note that if you are using nano or many other terminal-based editors, you will use CTRL + SHIFT + V instead of the more common CTRL + V to paste:
 
 `
 dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
