@@ -1,18 +1,20 @@
-# Building the website
+# Building the Website
 
-So far, you've used some Bash script when interacting with the Raspberry Pi in the terminal window and written some Python code. The website you're going to show the GPS tracking information on is going to be designed using HTML with some sections in Javascript. It will also call on a cascading style sheet (CSS). CSS is a style sheet language used for specifying the presentation and styling of the HTML site.
+So far, you've used some Bash script when interacting with the Raspberry Pi in the terminal window and written some Python code. The website you're going to use to show the GPS tracking information will be designed using HTML, with some sections in Javascript. It will also call on a cascading style sheet (CSS). CSS is a style sheet language used for specifying the presentation and styling of the HTML site.
 
-This won't be done on the Raspberry Pi itself, but on your laptop in a program called Visual Studio Code, a free code editor. You'll need to make sure you've downloaded this from https://code.visualstudio.com
+This won't be done on the Raspberry Pi itself, but on your laptop in a program called Visual Studio Code, a free code editor. You'll need to download this from https://code.visualstudio.com.
 
-Once downloaded, also install the Live Server Extension: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+Once downloaded, also install the Live Server Extension: 
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer 
 
 Create copies of the index.html and map.css files in Visual Studio Code.
 
-You'll need a Google Maps API key, which if you're doing this as part of an Arm Education workshop will be provided to you, if not you can follow these instructions https://developers.google.com/maps/documentation/embed/get-api-key
+You'll need a Google Maps API key, which will be provided to you if you are doing this as part of an Arm Education workshop. If not, you can follow these instructions: 
+https://developers.google.com/maps/documentation/embed/get-api-key
 
 The API key goes in place of the API_KEY_HERE text in line 106 of the index.html file.
-Also, you need to fill in the firebase information also in index.html
+You will also need to complete the Firebase information in index.html
 
-Right clicking on the index.html file should allow you to open the file using Live Server.
+Right-clicking on the index.html file should allow you to open the file using Live Server.
 
-Explore both of these files, you should be able to change the starting map, change the titles, colours, even the backdrop picture. Make the page your own!
+Explore both of these files. You should be able to change the starting map, change the titles, colours, and even the backdrop picture. Make the page your own!
