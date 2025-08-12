@@ -1,16 +1,16 @@
-# Sending the data to the realtime database
+# Sending the Data to the Real-Time Database
 
-We've already checked that we're able to identify the relevant latitude and longitude, and have been able to show this in the terminal window. Now the task is to get this sent to the realtime database so that our tracking website can be updated at a later stage. 
+We've already checked that we're able to identify the relevant latitude and longitude, and have been able to show this in the terminal window. Now the task is to get this sent to the real-time database so that our tracking website can be updated at a later stage. 
 
-To do this, you'll use a slightly updated version of the code, with your own information for the Firebase configuration (where the xxxx's are).
+To do this, you'll use a slightly updated version of the code with your own information for the Firebase configuration (where the xxxx's are).
 
-Ensure your in the GPS_Tracker directory:
+Ensure you are in the GPS_Tracker directory:
 
 `
 cd GPS_Tracker
 `
 
-Create a python file, gps_send.py: 
+Create a Python file, gps_send.py: 
 
 `
 nano gps_send.py
@@ -58,19 +58,19 @@ while True:
                 db.update(data)
                 print("Data sent")
 ```
-Run this python code using the following command: 
+Run this Python code using the following command: 
 
 `
 python3 gps_send.py
 `
 
-In the terminal window you should, after a few moments, see the GPS data and confirmation that it's been sent successfully to the realtime database:
+After a few moments, you should see the GPS data in the terminal window and confirmation that it's been sent successfully to the real-time database:
 
 <p align="center">
 <img src="./Images/Sent_data.png" width="500">
 </p>
 
-Go back to your Firebase realtime database to check that it's receiving the GPS information. 
+Go back to your Firebase real-time database to check that it's receiving the GPS information. 
 
 <p align="center">
 <img src="./Images/Realtime_database.png" width="750">

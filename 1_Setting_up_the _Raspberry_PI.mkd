@@ -1,50 +1,50 @@
 # Setting up your Raspberry Pi
 
-Install the latest Raspberry Pi OS on a Micro-SD card. For details, visit: www.raspberrypi.org/documentation/installation/installing-images/.
+Install the latest Raspberry Pi OS on a microSD card. For details, visit: www.raspberrypi.org/documentation/installation/installing-images/.
 
 ![image info](./Images/RaspberryPi-Imager.png)
 
-- Choose the correct device and the recommended OS 
-- When the pop-up appears you must click Edit Settings. This will open the OS customisation options. 
-- In this window there are three tabs you need to interact with. 
+- Choose the correct device and the recommended OS. 
+- When the pop-up appears, you must click Edit Settings. This will open the OS customisation options. 
+- In this window, there are three tabs you need to interact with. 
 
 ## GENERAL tab
 
-Add (and note down somewhere) 
-- The host name
-- A username and password
-- Wi-Fi credentials of the network you'll be using (SSID and password)
+Add (and note down somewhere): 
+- The host name.
+- A username and password.
+- Wi-Fi credentials for the network you'll be using (SSID and password).
 
 You can also set the time zone and keyboard.
 
 ![image info](./Images/os-customisation-general.png)
 
 ## SERVICES tab
-Turn on “Enable SSH” and “Use password authentication”.
+Turn on 'Enable SSH' and 'Use password authentication'.
 
 ## OPTIONS tab
-Click “Eject media” when finished, and enable telemetry.
+Click 'Eject media' when finished, and enable telemetry.
 
 
-Once the write has been successful, you can insert the Micro-SD card into the Raspberry Pi. Next, connect it to a power source (a battery pack, your laptop or a mains supply), and begin. The details below show you how to login to the device.
+Once the write has been successful, you can insert the microSD card into the Raspberry Pi. Next, connect it to a power source (a battery pack, your laptop, or a mains supply), and begin. The details below show you how to log in to the device.
 
 You should notice that the green LED on the Raspberry Pi starts flashing. 
 
 # Connecting to your Raspberry Pi
 
-Make sure that the computer you are using is on the same network as you have set up the Raspberry Pi to join.
+Make sure that the computer you are using is on the same network that you have set up the Raspberry Pi to join.
 
-If you're on a Mac you will work in a terminal window. On a Windows machine or a Chromebook, you'll need to research how to enable a terminal window that can use SSH .
+If you're on a Mac, you will work in a terminal window. On a Windows machine or a Chromebook, you'll need to research how to enable a terminal window that can use SSH.
 
-For example, on a Chromebook you can enable linux developer and then open up the “Terminal” application and select “SSH”.
+For example, on a Chromebook, you can enable Linux Developer and then open up the 'Terminal' application and select 'SSH'.
 
-- Open a terminal window and ssh into the Raspberry Pi using the following command:
+- Open a terminal window and SSH into the Raspberry Pi using the following command:
 
 `
 ssh [username]@[hostname].local
 `
 
-- You'll be asked for your password and then after a few moments (be patient) you'll get confirmation that you're logged in. The initial line will change (possibly colour) to :
+- You'll be asked for your password and then, after a few moments (be patient), you'll get confirmation that you're logged in. The initial line will change (possibly colour) to:
 
 `
 [username]@[hostname]:
